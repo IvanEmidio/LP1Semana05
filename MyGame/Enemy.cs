@@ -14,10 +14,32 @@ namespace MyGame
             shield = 0;
         }
 
+        public float GetHealth()
+        {
+            return health;
+        }
+        public float GetShield()
+        {
+            return shield;
+        }
+
         public string GetName()
         {
             return name;
         }
+        public void SetName(string name)
+        {
+            int tamanho = 8;
+
+            if(name.Length < 8)
+            {
+                this.name = name;
+            }
+            else
+            {
+                this.name = name.Substring(0, tamanho);
+            }
+        } 
         public void TakeDamage(float damage)
         {
             shield -= damage;
