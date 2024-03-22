@@ -9,6 +9,13 @@ namespace MyGame
         private float health = 100;
         private float shield = 0;
 
+        static private int powerPickedup;
+
+        static Enemy()
+        {
+            powerPickedup = 0;
+        }
+
         public Enemy(string name)
         {
             this.name = name;
@@ -28,6 +35,10 @@ namespace MyGame
         public string GetName()
         {
             return name;
+        }
+        public float GetPowerPickUp()
+        {
+            return powerPickedup;
         }
         public void SetName(string name)
         {
@@ -66,6 +77,7 @@ namespace MyGame
                 this.shield += x;
                 this.shield = MathF.Floor(100);
             }
+            powerPickedup += 1;
         }  
         
     }
