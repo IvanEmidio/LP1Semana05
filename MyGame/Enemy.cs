@@ -1,3 +1,5 @@
+using System;
+
 namespace MyGame
 {
 
@@ -51,5 +53,20 @@ namespace MyGame
             } 
             if (health < 0) health = 0;
         }
+
+        public void PickUpPowerUp(PowerUp power, float x)
+        { 
+            if(power == PowerUp.Health)
+            {
+                this.health += x;
+                this.health = MathF.Floor(100);
+            }
+            else if (power == PowerUp.Shield)
+            {
+                this.shield += x;
+                this.shield = MathF.Floor(100);
+            }
+        }  
+        
     }
 }

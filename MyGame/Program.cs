@@ -20,13 +20,16 @@ namespace MyGame
                 
             }
 
+            // enemies[0].TakeDamage(20);
+            // enemies[1].PickUpPowerUp(PowerUp.Shield, 50);
+
             for (int i = 0; i < n; i++)
             {
                 Console.WriteLine($"{enemies[i].GetName()}" +
                 $"{enemies[i].GetHealth()} {enemies[i].GetShield()}");
             }
-            
 
+            
         }
     }
 }
