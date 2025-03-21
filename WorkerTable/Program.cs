@@ -8,18 +8,19 @@ namespace WorkerTable
     {
         private static void Main(string[] args)
         {
-            Randomizer.Seed = new Random(int.Parse(args[0]));
+            int count = int.Parse(args[0]);
+            Randomizer.Seed = new Random(count);
+            Faker faker = new Faker("pt_PT");
+
             Table table = new Table();
-            Faker testUsers = new Faker("pt_PT");
-            Faker testJobs = new Faker();
-
             table.AddColumn("ID");
-            table.AddColumn(new TableColumn("Name"));
-            table.AddColumn(new TableColumn("Job"));
-
-            for(int i = 0; i >= int.Parse(args[0]); i++)
+            table.AddColumn("Name");
+            table.AddColumn("Job");
+            
+            for (int i = 0; i < count; i++)
             {
-                table.AddRow(i, testUsers, testJobs);
+                Name name = faker.Name;
+                table.AddRow($"{(i + 1)}", $"{name.FirstName()} {name.LastName()}", name.JobTitle());
             }
             
             AnsiConsole.Write(table);
