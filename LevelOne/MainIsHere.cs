@@ -13,6 +13,7 @@ namespace LevelOne
             Console.WriteLine("Hello LP1!");
             Console.WriteLine("Bad Day");
             Console.WriteLine("Bye!");
+            Console.WriteLine("Grey!");
         }
 
         private static void Method()
