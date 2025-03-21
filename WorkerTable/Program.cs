@@ -17,7 +17,7 @@ namespace WorkerTable
             table.AddColumn(new TableColumn("Name"));
             table.AddColumn(new TableColumn("Job"));
 
-            foreach (int i in args[0])
+            for(int i = 0; i >= int.Parse(args[0]); i++)
             {
                 table.AddRow(i, testUsers, testJobs);
             }
