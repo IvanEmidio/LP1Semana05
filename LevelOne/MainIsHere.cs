@@ -2,6 +2,9 @@
 
 namespace LevelOne
 {
+    /// <summary>
+    /// Branch Main
+    /// </summary>
     public class Program
     {
         private static void Main(string[] args)
